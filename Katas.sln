@@ -1,0 +1,47 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Katas.ClamCard.Specflow", "Katas.ClamCard.Specflow", "{CEBB36D4-F506-4B99-8696-EB9A7BC1996E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Katas.ClamCard.Specflow", "src\Katas.ClamCard.Specflow\Katas.ClamCard.Specflow.csproj", "{13AD1CC5-E9FB-4F05-AD30-CECA5C6A9623}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Katas.ClamCard.Specflow.Tests", "src\Katas.ClamCard.Specflow.Tests\Katas.ClamCard.Specflow.Tests.csproj", "{D500782D-8021-490B-827D-8E470CD6ADEC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Katas.ClamCard.Specflow.UnitTest", "src\Katas.ClamCard.Specflow.UnitTest\Katas.ClamCard.Specflow.UnitTest.csproj", "{067456C0-086C-46A8-B37F-1405717B7BFC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Katas", "src\Katas\Katas.csproj", "{564491E4-5B32-4584-9C87-F441247D4E09}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{13AD1CC5-E9FB-4F05-AD30-CECA5C6A9623}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{13AD1CC5-E9FB-4F05-AD30-CECA5C6A9623}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{13AD1CC5-E9FB-4F05-AD30-CECA5C6A9623}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{13AD1CC5-E9FB-4F05-AD30-CECA5C6A9623}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D500782D-8021-490B-827D-8E470CD6ADEC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D500782D-8021-490B-827D-8E470CD6ADEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D500782D-8021-490B-827D-8E470CD6ADEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D500782D-8021-490B-827D-8E470CD6ADEC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{067456C0-086C-46A8-B37F-1405717B7BFC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{067456C0-086C-46A8-B37F-1405717B7BFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{067456C0-086C-46A8-B37F-1405717B7BFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{067456C0-086C-46A8-B37F-1405717B7BFC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{564491E4-5B32-4584-9C87-F441247D4E09}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{564491E4-5B32-4584-9C87-F441247D4E09}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{564491E4-5B32-4584-9C87-F441247D4E09}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{564491E4-5B32-4584-9C87-F441247D4E09}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{13AD1CC5-E9FB-4F05-AD30-CECA5C6A9623} = {CEBB36D4-F506-4B99-8696-EB9A7BC1996E}
+		{D500782D-8021-490B-827D-8E470CD6ADEC} = {CEBB36D4-F506-4B99-8696-EB9A7BC1996E}
+		{067456C0-086C-46A8-B37F-1405717B7BFC} = {CEBB36D4-F506-4B99-8696-EB9A7BC1996E}
+	EndGlobalSection
+EndGlobal
