@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using TechTalk.SpecFlow;
 
@@ -8,6 +9,18 @@ namespace Katas.ClamCard.Specflow.Tests
     public class SimpleJourneysSteps
     {
         private Passenger _michael;
+        private List<Station> _stations;
+
+        [BeforeScenario]
+        public void SetUp()
+        {
+            _stations = new List<Station>();
+            _stations.Add(new Station("Asterisk", Zone.A));
+            _stations.Add(new Station("Aldgate", Zone.A));
+            _stations.Add(new Station("Balham", Zone.B));
+            _stations.Add(new Station("Barbican", Zone.B));
+            _stations.Add(new Station("Bison", Zone.B));
+        }
 
         [Given(@"Michael has an Oyster Card")]
         public void GivenMichaelHasAnOysterCard()
@@ -16,32 +29,13 @@ namespace Katas.ClamCard.Specflow.Tests
             _michael.BuyNewOysterCard();
         }
         
-        [Given(@"Michael travels from Asterisk to Aldgate")]
-        public void GivenMichaelTravelsFromAsteriskToAldgate()
+        [Given(@"Michael travels from (.*) to (.*)")]
+        public void GivenMichaelTravelsFromAsteriskToAldgate(string origin, string destination)
         {
-            Station stationA = new Station("Asterisk", Zone.A);
-            Station stationB = new Station("Aldgate", Zone.A);
-            Journey journey = new Journey(stationA, stationB);
-
-            _michael.PerformJourney(journey);
-        }
-        
-        [Given(@"Michael travels from Asterisk to Barbican")]
-        public void GivenMichaelTravelsFromAsteriskToBarbican()
-        {
-            Station stationA = new Station("Asterisk", Zone.A);
-            Station stationB = new Station("Barbican", Zone.B);
-            Journey journey = new Journey(stationA, stationB);
-
-            _michael.PerformJourney(journey);
-        }
-        
-        [Given(@"Michael travels from Barbican to Balham")]
-        public void GivenMichaelTravelsFromBarbicanToBalham()
-        {
-            Station stationA = new Station("Barbican", Zone.B);
-            Station stationB = new Station("Balham", Zone.B);
-            Journey journey = new Journey(stationA, stationB);
+            Journey journey = new Journey(
+                _stations.Find(x => x.Name == origin),
+                _stations.Find(x => x.Name == destination)
+                );
 
             _michael.PerformJourney(journey);
         }

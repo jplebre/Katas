@@ -35,7 +35,7 @@ namespace Katas.ClamCard.Specflow
 
         public decimal GetTotalDailyCost()
         {
-            throw new NotImplementedException();
+            return OysterCard.CalculateDailyCost();
         }
     }
 }

@@ -66,11 +66,9 @@ namespace Katas.ClamCard.Specflow.Tests
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("One-Way Zone 1 Journey")]
-        [NUnit.Framework.CategoryAttribute("mytag")]
         public virtual void One_WayZone1Journey()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("One-Way Zone 1 Journey", new string[] {
-                        "mytag"});
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("One-Way Zone 1 Journey", ((string[])(null)));
 #line 5
 this.ScenarioSetup(scenarioInfo);
 #line 6
@@ -110,11 +108,11 @@ this.ScenarioSetup(scenarioInfo);
 #line 16
 testRunner.Given("Michael has an Oyster Card", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 17
-testRunner.And("Michael travels from Asterisk to Barbican", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("Michael travels from Asterisk to Aldgate", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 18
-testRunner.And("Michael travels from Barbican to Balham", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("Michael travels from Asterisk to Balham", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 19
-testRunner.Then("Michael will be charged £3.00 for his journey", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+testRunner.Then("Michael will be charged £2.50 for his journey", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 20
 testRunner.And("a further £3.00 for his second journey", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden

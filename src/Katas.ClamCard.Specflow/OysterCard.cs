@@ -9,7 +9,7 @@ namespace Katas.ClamCard.Specflow
     public class OysterCard
     {
         public List<Journey> JourneyList;
-        public decimal DailyCost { get; set; }
+        public decimal DailyCostCap { get; private set; }
              
         public OysterCard()
         {
@@ -24,13 +24,11 @@ namespace Katas.ClamCard.Specflow
         public void DailyReset()
         {
             JourneyList.Clear();
-
         }
 
-        public void CalculateDailyCost()
+        public decimal CalculateDailyCost()
         {
-            throw new NotImplementedException();
-
+            return JourneyList.Sum(x => x.Cost);
         }
     }
 }
