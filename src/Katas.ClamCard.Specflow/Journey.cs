@@ -10,6 +10,7 @@ namespace Katas.ClamCard.Specflow
 {
     public class Journey
     {
+        public Zone Zone { get; private set; }
         public Station Origin { get; private set; }
         public Station Destination { get; private set; }
         public decimal Cost { get; private set; }
@@ -27,10 +28,12 @@ namespace Katas.ClamCard.Specflow
             switch (fare)
             {
                 case 0:
-                    return 2.5m;
+                    Zone = Zone.A;
+                    return Prices.SingleZoneA;
                     break;
                 case 1:
-                    return 3.0m;
+                    Zone = Zone.B;
+                    return Prices.SingleZoneB;
                     break;
                 default:
                     throw new Exception();
