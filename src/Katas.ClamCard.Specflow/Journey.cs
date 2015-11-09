@@ -36,5 +36,10 @@ namespace Katas.ClamCard.Specflow
                     throw new Exception();
             }
         }
+
+        public void SetDiscount(decimal discount)
+        {
+            Cost = Cost - discount;
+        }
     }
 }

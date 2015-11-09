@@ -27,15 +27,19 @@ namespace Katas.ClamCard.Specflow
             OysterCard.AddJourney(journey);
         }
 
-        public Journey GetLastJourney()
+        public decimal GetJourneyCost(int journeyIndex)
         {
-            int index = OysterCard.JourneyList.Count;
-            return OysterCard.JourneyList[index-1];
+            return OysterCard.JourneyList[journeyIndex-1].Cost;
         }
 
         public decimal GetTotalDailyCost()
         {
             return OysterCard.CalculateDailyCost();
+        }
+
+        public Journey GetJourney(int journeyIndex)
+        {
+            return OysterCard.JourneyList[journeyIndex - 1];
         }
     }
 }

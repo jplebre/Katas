@@ -17,6 +17,8 @@ namespace Katas.ClamCard.Specflow.Tests
             _stations = new List<Station>();
             _stations.Add(new Station("Asterisk", Zone.A));
             _stations.Add(new Station("Aldgate", Zone.A));
+            _stations.Add(new Station("Angel", Zone.A));
+            _stations.Add(new Station("Antelope", Zone.A));
             _stations.Add(new Station("Balham", Zone.B));
             _stations.Add(new Station("Barbican", Zone.B));
             _stations.Add(new Station("Bison", Zone.B));
@@ -30,7 +32,7 @@ namespace Katas.ClamCard.Specflow.Tests
         }
         
         [Given(@"Michael travels from (.*) to (.*)")]
-        public void GivenMichaelTravelsFromAsteriskToAldgate(string origin, string destination)
+        public void GivenMichaelTravelsFromOriginToDestination(string origin, string destination)
         {
             Journey journey = new Journey(
                 _stations.Find(x => x.Name == origin),
@@ -40,16 +42,28 @@ namespace Katas.ClamCard.Specflow.Tests
             _michael.PerformJourney(journey);
         }
         
-        [Then(@"Michael will be charged £(.*) for his journey")]
+        [Then(@"Michael will be charged £(.*) for his first journey")]
         public void ThenMichaelWillBeChargedForHisJourney(Decimal cost)
         {
-            Assert.AreEqual(_michael.GetLastJourney().Cost, cost);
+            Assert.AreEqual(cost, _michael.GetJourneyCost(1));
         }
         
         [Then(@"a further £(.*) for his second journey")]
-        public void ThenAFurtherForHisSecondJourney(Decimal p0)
+        public void ThenAFurtherForHisSecondJourney(Decimal cost)
         {
-            ScenarioContext.Current.Pending();
+            Assert.AreEqual(cost, _michael.GetJourneyCost(2));
+        }
+
+        [Then(@"a further £(.*) for his third journey")]
+        public void ThenAFurtherForHisThirdJourney(Decimal cost)
+        {
+            Assert.AreEqual(cost, _michael.GetJourneyCost(3));
+        }
+
+        [Then(@"a further £(.*) for his fourth journey")]
+        public void ThenAFurtherForHisFourthJourney(Decimal cost)
+        {
+            Assert.AreEqual(cost, _michael.GetJourneyCost(4));
         }
     }
 }

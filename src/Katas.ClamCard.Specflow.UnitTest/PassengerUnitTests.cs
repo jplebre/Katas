@@ -43,7 +43,7 @@ namespace Katas.ClamCard.Specflow.Tests
             Journey journey = new Journey(zoneAStation1,zoneAStation2);
 
             passenger.PerformJourney(journey);
-            Assert.AreSame(journey, passenger.GetLastJourney());
+            Assert.AreSame(journey, passenger.GetJourney(1));
         }
 
         [Test]
@@ -54,7 +54,7 @@ namespace Katas.ClamCard.Specflow.Tests
 
             passenger.PerformJourney(journey);
 
-            Assert.AreEqual(zoneOneFare, passenger.GetLastJourney().Cost);
+            Assert.AreEqual(zoneOneFare, passenger.GetJourneyCost(1));
         }
 
         [Test]
@@ -65,7 +65,7 @@ namespace Katas.ClamCard.Specflow.Tests
 
             passenger.PerformJourney(journey);
 
-            Assert.AreEqual(zoneTwoFare, passenger.GetLastJourney().Cost);
+            Assert.AreEqual(zoneTwoFare, passenger.GetJourneyCost(1));
         }
 
         [Test]
