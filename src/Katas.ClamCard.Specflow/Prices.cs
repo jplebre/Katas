@@ -10,5 +10,8 @@
         public static decimal WeeklyCapZoneB = 47.00m;
         public static decimal MonthlyCapZoneA = 145.00m;
         public static decimal MonthlyCapZoneB = 165.00m;
+
+        public static decimal ReturnZoneA = 2.0m;
+        public static decimal ReturnZoneB = 2.5m;
     }
 }

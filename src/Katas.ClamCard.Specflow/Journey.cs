@@ -11,6 +11,7 @@ namespace Katas.ClamCard.Specflow
     public class Journey
     {
         public Zone Zone { get; private set; }
+        public bool IsReturnJourney { get; private set; }
         public Station Origin { get; private set; }
         public Station Destination { get; private set; }
         public decimal Cost { get; private set; }
@@ -43,6 +44,18 @@ namespace Katas.ClamCard.Specflow
         public void SetDiscount(decimal discount)
         {
             Cost = Cost - discount;
+        }
+
+        public void CheckIsReturnJourney(Journey previousJourney)
+        {
+            this.IsReturnJourney = (previousJourney.Destination == this.Origin && previousJourney.Origin == this.Destination);
+
+            if (this.IsReturnJourney && !previousJourney.IsReturnJourney)
+            {
+                if (this.Zone == Zone.A) this.Cost = Prices.ReturnZoneA;
+                else this.Cost = Prices.ReturnZoneB;
+            }
+
         }
     }
 }

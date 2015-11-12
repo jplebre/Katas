@@ -22,8 +22,12 @@ namespace Katas.ClamCard.Specflow
 
         public void AddJourney(Journey journey)
         {
+            if (JourneyList.Count >= 1)
+                journey.CheckIsReturnJourney(JourneyList.Last());
+
             JourneyList.Add(journey);
             CheckZoneUsage(journey);
+
             CalculateDiscount();
         }
 
