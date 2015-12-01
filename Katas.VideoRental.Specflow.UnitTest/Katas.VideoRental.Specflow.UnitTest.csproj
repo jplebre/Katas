@@ -3,11 +3,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{067456C0-086C-46A8-B37F-1405717B7BFC}</ProjectGuid>
+    <ProjectGuid>{C80018B2-8338-4A83-B585-79B4BB45272C}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Katas.ClamCard.Specflow.UnitTest</RootNamespace>
-    <AssemblyName>Katas.ClamCard.Specflow.UnitTest</AssemblyName>
+    <RootNamespace>Katas.VideoRental.Specflow.UnitTest</RootNamespace>
+    <AssemblyName>Katas.VideoRental.Specflow.UnitTest</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -31,19 +31,19 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="nunit.framework, Version=3.0.5797.27534, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\NUnit.3.0.0\lib\net45\nunit.framework.dll</HintPath>
+      <HintPath>..\packages\NUnit.3.0.0\lib\net45\nunit.framework.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="PassengerUnitTests.cs" />
+    <Compile Include="LibraryTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Katas.ClamCard.Specflow\Katas.ClamCard.Specflow.csproj">
-      <Project>{13ad1cc5-e9fb-4f05-ad30-ceca5c6a9623}</Project>
-      <Name>Katas.ClamCard.Specflow</Name>
+    <ProjectReference Include="..\Katas.VideoRental.Specflow\Katas.VideoRental.Specflow.csproj">
+      <Project>{5d8956f9-20c8-4707-95f3-8c5bdfae0642}</Project>
+      <Name>Katas.VideoRental.Specflow</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
