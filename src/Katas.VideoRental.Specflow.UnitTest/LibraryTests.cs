@@ -8,11 +8,13 @@ namespace Katas.VideoRental.Specflow.UnitTest
     public class LibraryTests
     {
         private Library _library;
+        private Registry _registry;
         
         [SetUp]
         public void TestSetup()
         {
             _library = new Library();
+            _registry = new Registry();
         }
 
         [Test]
@@ -22,18 +24,11 @@ namespace Katas.VideoRental.Specflow.UnitTest
         }
 
         [Test]
-        public void LibraryKeepsTrackOfUsers()
+        public void LibraryRegistersNewTitles()
         {
-            Assert.That(_library.Users, Is.Not.Null);
-        }
-
-        [Test]
-        public void LibraryRegistersNewUsers()
-        {
-            _library.RegisterUser("John Doe", "john.doe@aol.com", 28);
-            User user = new User("John Doe", "john.doe@aol.com", 28);
-
-            Assert.AreEqual(_library.Users[0],user);
+            Title title = new Title("PulpFiction", "Quentin Tarantino", 1985, 1);
+            _library.AddTitleToLibrary(title);
+            Assert.That(_library.Titles[0], Is.EqualTo(title));
         }
     }
 }

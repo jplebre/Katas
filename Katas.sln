@@ -15,9 +15,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Katas", "src\Katas\Katas.cs
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Katas.VideoRental.Specflow", "Katas.VideoRental.Specflow", "{9863A2E4-F6E9-4D37-8DDF-41D8DF1D18E8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Katas.VideoRental.Specflow", "Katas.VideoRental.Specflow\Katas.VideoRental.Specflow.csproj", "{5D8956F9-20C8-4707-95F3-8C5BDFAE0642}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Katas.VideoRental.Specflow", "src\Katas.VideoRental.Specflow\Katas.VideoRental.Specflow.csproj", "{5D8956F9-20C8-4707-95F3-8C5BDFAE0642}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Katas.VideoRental.Specflow.UnitTest", "Katas.VideoRental.Specflow.UnitTest\Katas.VideoRental.Specflow.UnitTest.csproj", "{C80018B2-8338-4A83-B585-79B4BB45272C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Katas.VideoRental.Specflow.UnitTest", "src\Katas.VideoRental.Specflow.UnitTest\Katas.VideoRental.Specflow.UnitTest.csproj", "{C80018B2-8338-4A83-B585-79B4BB45272C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
