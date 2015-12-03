@@ -40,12 +40,13 @@ And user B is number 1 on the waiting list
 Then library registers copy as available
 And sends a thank you email to user A
 And sends a title available email to user B
+
 Scenario: Returning the wrong rental copy
 Given user A performs a simple rental
 And user A returns title
 Then library sends an email to user with a warning
 
-Scenario: Returning a rental copy
+Scenario: Failed to return a rental copy
 Given user A performs a simple rental
 And 16 days later copy is still not returned
 Then library sends an email to the user A

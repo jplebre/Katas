@@ -1,5 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
+using System.Net.Mail;
+using Katas.VideoRental.Specflow.Models;
 using NUnit.Framework;
 using Rhino.Mocks;
 
@@ -9,11 +11,20 @@ namespace Katas.VideoRental.Specflow.UnitTest
     public class RegistryTests
     {
         private Registry _registry;
+        private IEmailServices _stubEmailServices;
+        private User User;
+        private MailMessage MailMessage;
 
         [SetUp]
         public void SetUp()
         {
-            _registry = new Registry();
+            User = new User("John Doe", "john.doe@aol.com", 28);
+            MailMessage = new MailMessage();
+
+            _stubEmailServices = MockRepository.GenerateStub<IEmailServices>();
+            _stubEmailServices.Stub(x => x.SendUserWelcomeEmail(User));
+
+            _registry = new Registry(_stubEmailServices);
         }
 
         [Test]
@@ -25,20 +36,17 @@ namespace Katas.VideoRental.Specflow.UnitTest
         [Test]
         public void RegistryRegistersNewUsers()
         {
-            User user = new User("John Doe", "john.doe@aol.com", 28);
-            _registry.RegisterUser(user);
+            _registry.RegisterUser(User);
 
-            Assert.That(_registry.Users[0], Is.EqualTo(user));
+            Assert.That(_registry.Users[0], Is.EqualTo(User));
         }
 
         [Test]
         public void RegistrySendsUserWelcomeEmail()
         {
-            User user = new User("John Doe", "john.doe@aol.com", 28);
-            _registry.RegisterUser(user);
+            _registry.RegisterUser(User);
 
-            //TODO: mock email service and test
-            Assert.That();
+            _stubEmailServices.Expect(x => x.SendUserWelcomeEmail(User));
         }
     }
 }
