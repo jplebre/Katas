@@ -8,13 +8,11 @@ namespace Katas.VideoRental.Specflow.UnitTest
     public class LibraryTests
     {
         private Library _library;
-        private Registry _registry;
         
         [SetUp]
         public void TestSetup()
         {
             _library = new Library();
-            _registry = new Registry();
         }
 
         [Test]

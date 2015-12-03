@@ -8,9 +8,9 @@ namespace Katas.VideoRental.Specflow
 {
     public class User
     {
-        string Name;
-        string Email;
-        int Age;
+        public string Name { get; private set; }
+        public string Email { get; private set; }
+        public int Age { get; private set; }
 
         public User(string name, string email, int age)
         {

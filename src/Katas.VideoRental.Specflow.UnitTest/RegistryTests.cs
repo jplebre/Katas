@@ -1,6 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
 using NUnit.Framework;
+using Rhino.Mocks;
 
 namespace Katas.VideoRental.Specflow.UnitTest
 {
@@ -28,6 +29,16 @@ namespace Katas.VideoRental.Specflow.UnitTest
             _registry.RegisterUser(user);
 
             Assert.That(_registry.Users[0], Is.EqualTo(user));
+        }
+
+        [Test]
+        public void RegistrySendsUserWelcomeEmail()
+        {
+            User user = new User("John Doe", "john.doe@aol.com", 28);
+            _registry.RegisterUser(user);
+
+            //TODO: mock email service and test
+            Assert.That();
         }
     }
 }
