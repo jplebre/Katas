@@ -23,8 +23,20 @@ namespace Katas.VideoRental.Specflow
 
         public void RegisterUser(User user)
         {
-            Users.Add(user);
-            _emailServices.SendUserWelcomeEmail(user);
+            if (IsUserUnderaged(user))
+            {
+                return;
+            }
+            else
+            {
+                Users.Add(user);
+                _emailServices.SendUserWelcomeEmail(user);
+            }
+        }
+
+        private Boolean IsUserUnderaged(User user)
+        {
+            return user.Age < 18;
         }
     }
 }

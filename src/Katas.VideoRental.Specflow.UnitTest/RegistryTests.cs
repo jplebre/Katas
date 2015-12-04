@@ -18,7 +18,12 @@ namespace Katas.VideoRental.Specflow.UnitTest
         [SetUp]
         public void SetUp()
         {
-            User = new User("John Doe", "john.doe@aol.com", 28);
+            User = new User
+            {
+                Name ="John Doe",
+                Email = "john.doe@aol.com",
+                Age = 28
+            };
             MailMessage = new MailMessage();
 
             _stubEmailServices = MockRepository.GenerateStub<IEmailServices>();
@@ -39,6 +44,20 @@ namespace Katas.VideoRental.Specflow.UnitTest
             _registry.RegisterUser(User);
 
             Assert.That(_registry.Users[0], Is.EqualTo(User));
+        }
+
+        [Test]
+        public void RegistryDoesNotRegisterUnderage()
+        {
+            User underagedUser = new User
+            {
+                Name = "John Doe",
+                Email = "john.doe@aol.com",
+                Age = 17
+            };
+            _registry.RegisterUser(underagedUser);
+
+            Assert.That(!_registry.Users.Contains(underagedUser));
         }
 
         [Test]
