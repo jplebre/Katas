@@ -1,6 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
 using System.Net.Mail;
+using System.Security.Cryptography.X509Certificates;
 using Katas.VideoRental.Specflow.Models;
 using NUnit.Framework;
 using Rhino.Mocks;
@@ -44,6 +45,14 @@ namespace Katas.VideoRental.Specflow.UnitTest
             _registry.RegisterUser(User);
 
             Assert.That(_registry.Users[0], Is.EqualTo(User));
+        }
+
+        [Test]
+        public void RegisteredUsersHaveAllFields()
+        {
+            //Not sure if this is a really meaningfull test
+            _registry.RegisterUser(User);
+            Assert.That(_registry.Users[0], Is.Not.Null);
         }
 
         [Test]
