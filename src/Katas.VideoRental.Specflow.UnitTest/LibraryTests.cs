@@ -29,7 +29,7 @@ namespace Katas.VideoRental.Specflow.UnitTest
         }
 
         [Test]
-        public void LibraryRegistersNewTitles()
+        public void WhenRegistringANewTitleANewKeyPairIsCreated()
         {
             Title title = new Title
             {
@@ -38,7 +38,26 @@ namespace Katas.VideoRental.Specflow.UnitTest
                 YearOfRelease = 1985
             };
             _library.AddTitleToLibrary(title);
-            Assert.That(_library.Titles[0], Is.EqualTo(title));
+
+            Assert.That(_library.Titles, Contains.Key(title));
+            Assert.That(_library.Titles[title], Is.EqualTo(1));
         }
+
+        [Test]
+        public void WhenRegistringExistingTitleKeyPairValueIsIncremented()
+        {
+            Title title = new Title
+            {
+                TitleName = "PulpFiction",
+                Director = "Quentin Tarantino",
+                YearOfRelease = 1985
+            };
+            _library.AddTitleToLibrary(title);
+            _library.AddTitleToLibrary(title);
+
+            Assert.That(_library.Titles, Contains.Key(title));
+            Assert.That(_library.Titles[title], Is.EqualTo(2));
+        }
+
     }
 }

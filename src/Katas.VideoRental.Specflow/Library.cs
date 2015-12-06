@@ -8,16 +8,23 @@ namespace Katas.VideoRental.Specflow
 {
     public class Library
     {
-        public List<Title> Titles { get; private set; }
+        public Dictionary<Title, int> Titles { get; private set; }
 
         public Library()
         {
-            Titles = new List<Title>();
+            Titles = new Dictionary<Title, int>();
         }
 
         public void AddTitleToLibrary(Title title)
         {
-            Titles.Add(title);
+            if (Titles.ContainsKey(title))
+            {
+                Titles[title]++;
+            }
+            else
+            {
+                Titles.Add(title, 1);
+            }
         }
     }
 }

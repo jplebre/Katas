@@ -14,7 +14,7 @@ namespace Katas.VideoRental.Specflow.UnitTest
         private Registry _registry;
         private IEmailServices _stubEmailServices;
         private User User;
-        private MailMessage MailMessage;
+        private User Administrator;
 
         [SetUp]
         public void SetUp()
@@ -23,9 +23,17 @@ namespace Katas.VideoRental.Specflow.UnitTest
             {
                 Name ="John Doe",
                 Email = "john.doe@aol.com",
-                Age = 28
+                Age = 28,
+                UserStatus = UserStatus.MEMBER
             };
-            MailMessage = new MailMessage();
+
+            Administrator = new User
+            {
+                Name = "Sarah Jane",
+                Email = "sarah.jane@aol.com",
+                Age = 24,
+                UserStatus = UserStatus.ADMINISTRATOR
+            };
 
             _stubEmailServices = MockRepository.GenerateStub<IEmailServices>();
             _stubEmailServices.Stub(x => x.SendUserWelcomeEmail(User));
@@ -36,7 +44,7 @@ namespace Katas.VideoRental.Specflow.UnitTest
         [Test]
         public void RegistryKeepsTrackOfUsers()
         {
-            Assert.That(_registry.Users, Is.Not.Null);
+            Assert.That(_registry.GetListOfUsers(), Is.Not.Null);
         }
 
         [Test]
@@ -44,15 +52,19 @@ namespace Katas.VideoRental.Specflow.UnitTest
         {
             _registry.RegisterUser(User);
 
-            Assert.That(_registry.Users[0], Is.EqualTo(User));
+            Assert.That(_registry.GetListOfUsers()[0], Is.EqualTo(User));
         }
 
         [Test]
         public void RegisteredUsersHaveAllFields()
         {
-            //Not sure if this is a really meaningfull test
-            _registry.RegisterUser(User);
-            Assert.That(_registry.Users[0], Is.Not.Null);
+            User UserWithoutFields = new User()
+            {
+                
+            };
+            _registry.RegisterUser(UserWithoutFields);
+
+            Assert.That(_registry.GetListOfUsers().Contains(UserWithoutFields), Is.False);
         }
 
         [Test]
@@ -66,7 +78,7 @@ namespace Katas.VideoRental.Specflow.UnitTest
             };
             _registry.RegisterUser(underagedUser);
 
-            Assert.That(!_registry.Users.Contains(underagedUser));
+            Assert.That(!_registry.GetListOfUsers().Contains(underagedUser));
         }
 
         [Test]
