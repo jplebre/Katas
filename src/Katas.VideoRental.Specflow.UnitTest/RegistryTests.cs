@@ -60,7 +60,6 @@ namespace Katas.VideoRental.Specflow.UnitTest
         {
             User UserWithoutFields = new User()
             {
-                
             };
             _registry.RegisterUser(UserWithoutFields);
 

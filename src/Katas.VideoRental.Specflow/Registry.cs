@@ -57,12 +57,19 @@ namespace Katas.VideoRental.Specflow
 
         private Boolean IsUserUnderaged(User user)
         {
-            return user.Age < 18;
+            return user.Age < 18 || user.Age == 0;
         }
 
         private Boolean NotAllFieldsPresent(User user)
         {
-            return false;
+            if (string.IsNullOrEmpty(user.Name) || string.IsNullOrEmpty(user.Email))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }
