@@ -55,6 +55,25 @@ namespace Katas.VideoRental.Specflow
             return new User();
         }
 
+        public void UserAddsTitleToWishlist(User user, string titleName)
+        {
+            WishlistCannotBeNull(user);
+            user.Wishlist.Add(titleName.ToLower());
+        }
+
+        public bool CheckUserWishlistForTitle(User user, string titleName)
+        {
+            return user.Wishlist.Contains(titleName.ToLower());
+        }
+
+        private void WishlistCannotBeNull(User user)
+        {
+            if (user.Wishlist == null)
+            {
+                user.Wishlist = new List<string>();
+            }
+        }
+
         private Boolean IsUserUnderaged(User user)
         {
             return user.Age < 18 || user.Age == 0;

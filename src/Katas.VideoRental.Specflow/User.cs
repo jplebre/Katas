@@ -12,6 +12,7 @@ namespace Katas.VideoRental.Specflow
         public string Email { get; set; }
         public int Age { get; set; }
         public UserStatus UserStatus { get; set; }
+        public List<string> Wishlist { get; set; } 
     }
 
     public enum UserStatus{ MEMBER, ADMINISTRATOR }

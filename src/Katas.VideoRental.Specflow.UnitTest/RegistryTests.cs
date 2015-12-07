@@ -13,13 +13,15 @@ namespace Katas.VideoRental.Specflow.UnitTest
     {
         private Registry _registry;
         private IEmailServices _stubEmailServices;
-        private User User;
+        private User TestUser;
         private User Administrator;
+        private Title TestTitle;
+
 
         [SetUp]
         public void SetUp()
         {
-            User = new User
+            TestUser = new User
             {
                 Name ="John Doe",
                 Email = "john.doe@aol.com",
@@ -35,11 +37,19 @@ namespace Katas.VideoRental.Specflow.UnitTest
                 UserStatus = UserStatus.ADMINISTRATOR
             };
 
+            TestTitle = new Title
+            {
+                TitleName = "Pulp Fiction",
+                Director = "Quentin Tarantino",
+                YearOfRelease = 1995
+            };
+
             _stubEmailServices = MockRepository.GenerateStub<IEmailServices>();
-            _stubEmailServices.Stub(x => x.SendUserWelcomeEmail(User));
+            _stubEmailServices.Stub(x => x.SendUserWelcomeEmail(TestUser));
 
             _registry = new Registry(_stubEmailServices);
         }
+
 
         [Test]
         public void RegistryKeepsTrackOfUsers()
@@ -50,9 +60,9 @@ namespace Katas.VideoRental.Specflow.UnitTest
         [Test]
         public void RegistryRegistersNewUsers()
         {
-            _registry.RegisterUser(User);
+            _registry.RegisterUser(TestUser);
 
-            Assert.That(_registry.GetListOfUsers()[0], Is.EqualTo(User));
+            Assert.That(_registry.GetListOfUsers()[0], Is.EqualTo(TestUser));
         }
 
         [Test]
@@ -83,9 +93,27 @@ namespace Katas.VideoRental.Specflow.UnitTest
         [Test]
         public void RegistrySendsUserWelcomeEmail()
         {
-            _registry.RegisterUser(User);
+            _registry.RegisterUser(TestUser);
 
-            _stubEmailServices.Expect(x => x.SendUserWelcomeEmail(User));
+            _stubEmailServices.Expect(x => x.SendUserWelcomeEmail(TestUser));
+        }
+
+        [Test]
+        public void UserAddsTitleToWishlistInLowerCase()
+        {
+            string userWishedTitleName = "Pulp Fiction";
+            _registry.UserAddsTitleToWishlist(TestUser, userWishedTitleName);
+
+            Assert.That(TestUser.Wishlist.Contains(userWishedTitleName.ToLower()), Is.True);
+        }
+
+        [Test]
+        public void WishlistTitlesAreInLowerCase()
+        {
+            string userWishedTitleName = "Pulp Fiction";
+            _registry.UserAddsTitleToWishlist(TestUser, userWishedTitleName);
+
+            Assert.That(_registry.CheckUserWishlistForTitle(TestUser, userWishedTitleName), Is.True);
         }
     }
 }
