@@ -1,6 +1,8 @@
 ﻿using System;
+using Katas.VideoRental.Specflow.Models;
 using NUnit;
 using NUnit.Framework;
+using Rhino.Mocks;
 
 namespace Katas.VideoRental.Specflow.UnitTest
 {
@@ -9,6 +11,9 @@ namespace Katas.VideoRental.Specflow.UnitTest
         private User TestUser;
         private Title TestTitle;
         private RentalEngine _rentalEngine;
+        private ILibrary _library;
+        private IEmailServices _emailServices;
+        private Registry _registry;
 
         [SetUp]
         public void SetUp()
@@ -28,7 +33,11 @@ namespace Katas.VideoRental.Specflow.UnitTest
                 YearOfRelease = 1995
             };
 
-            _rentalEngine = new RentalEngine();
+            _library = new Library();
+            _emailServices = new EmailServices();
+            _registry = new Registry();
+
+            _rentalEngine = new RentalEngine(_library, _emailServices, _registry, new CMSEntries());
         }
 
         [Test]
@@ -56,6 +65,20 @@ namespace Katas.VideoRental.Specflow.UnitTest
             DateTime now = DateTime.Today.AddDays(15);
 
             Assert.That(_rentalEngine.GetRentals()[0].DueByDate, Is.EqualTo(now));
+        }
+
+        [Test]
+        public void UserDonatesTitleAndTitleIsAddedToLibrary()
+        {
+            _rentalEngine.UserDonatesTitle(TestUser, TestTitle);
+
+            Assert.That(_library.GetLibrary().ContainsKey(TestTitle), Is.True);
+        }
+
+        [Test]
+        public void UserDonatesTitleAndUserReceivesLoyaltyPoints()
+        {
+            
         }
     }
 }

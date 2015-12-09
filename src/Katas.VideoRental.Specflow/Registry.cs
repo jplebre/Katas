@@ -90,5 +90,15 @@ namespace Katas.VideoRental.Specflow
                 return false;
             }
         }
+
+        public User GetUser(User user)
+        {
+            return Users.Find(x => x.Equals(user));
+        }
+
+        public void AddLoyaltyPointsToUser(User user, int loyaltyPoints)
+        {
+            user.LoyaltyPoints += loyaltyPoints;
+        }
     }
 }

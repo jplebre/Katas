@@ -11,5 +11,6 @@ namespace Katas.VideoRental.Specflow.Models
         public string VideoClubEmailAddress = "videoclub@aol.com";
         public string WelcomeEmailBody = "Welcome to the VideoClub ";
         public string WelcomeEmailSubject = "Welcome to the VideoClub";
+        public int PriorityPointsForSingleRental = 2;
     }
 }

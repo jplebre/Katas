@@ -11,6 +11,7 @@ namespace Katas.VideoRental.Specflow
         public string Name { get; set; }
         public string Email { get; set; }
         public int Age { get; set; }
+        public int LoyaltyPoints { get; set; }
         public UserStatus UserStatus { get; set; }
         public List<string> Wishlist { get; set; } 
     }

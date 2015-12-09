@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Katas.VideoRental.Specflow
 {
-    public class Library
+    public class Library : ILibrary
     {
         public Dictionary<Title, int> Titles { get; private set; }
 
@@ -25,6 +25,11 @@ namespace Katas.VideoRental.Specflow
             {
                 Titles.Add(title, 1);
             }
+        }
+
+        public Dictionary<Title,int> GetLibrary()
+        {
+            return Titles;
         }
     }
 }
