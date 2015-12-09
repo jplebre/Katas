@@ -21,6 +21,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Katas.VideoRental.Specflow.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Katas.VideoRental.Specflow.Tests", "src\Katas.VideoRental.Specflow.Tests\Katas.VideoRental.Specflow.Tests.csproj", "{201D51A5-BCB4-436F-ADC7-18F14B1435E7}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Katas.FizzBuzz", "Katas.FizzBuzz", "{67F8DD03-F6C2-4D31-9EB2-715F706A12B9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FizzBuzzGenerator", "src\Katas.FizzBuzz\FizzBuzzGenerator\FizzBuzzGenerator.csproj", "{29859766-DC79-4C12-95E8-5A568B94F8CA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FizzBuzzTests", "src\Katas.FizzBuzz\FizzBuzzTests\FizzBuzzTests.csproj", "{A6FBABB9-FBB8-4582-82B8-38D94593FB93}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -55,6 +61,14 @@ Global
 		{201D51A5-BCB4-436F-ADC7-18F14B1435E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{201D51A5-BCB4-436F-ADC7-18F14B1435E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{201D51A5-BCB4-436F-ADC7-18F14B1435E7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{29859766-DC79-4C12-95E8-5A568B94F8CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{29859766-DC79-4C12-95E8-5A568B94F8CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{29859766-DC79-4C12-95E8-5A568B94F8CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{29859766-DC79-4C12-95E8-5A568B94F8CA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A6FBABB9-FBB8-4582-82B8-38D94593FB93}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A6FBABB9-FBB8-4582-82B8-38D94593FB93}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A6FBABB9-FBB8-4582-82B8-38D94593FB93}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A6FBABB9-FBB8-4582-82B8-38D94593FB93}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -66,5 +80,7 @@ Global
 		{5D8956F9-20C8-4707-95F3-8C5BDFAE0642} = {9863A2E4-F6E9-4D37-8DDF-41D8DF1D18E8}
 		{C80018B2-8338-4A83-B585-79B4BB45272C} = {9863A2E4-F6E9-4D37-8DDF-41D8DF1D18E8}
 		{201D51A5-BCB4-436F-ADC7-18F14B1435E7} = {9863A2E4-F6E9-4D37-8DDF-41D8DF1D18E8}
+		{29859766-DC79-4C12-95E8-5A568B94F8CA} = {67F8DD03-F6C2-4D31-9EB2-715F706A12B9}
+		{A6FBABB9-FBB8-4582-82B8-38D94593FB93} = {67F8DD03-F6C2-4D31-9EB2-715F706A12B9}
 	EndGlobalSection
 EndGlobal
