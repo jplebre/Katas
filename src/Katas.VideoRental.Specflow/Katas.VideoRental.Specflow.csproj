@@ -41,6 +41,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Models\CMSEntries.cs" />
+    <Compile Include="Rental.cs" />
+    <Compile Include="RentalEngine.cs" />
     <Compile Include="Services\EmailServices.cs" />
     <Compile Include="Services\IEmailServices.cs" />
     <Compile Include="Library.cs" />
