@@ -43,6 +43,12 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FizzBuzzGenerator\FizzBuzzGenerator.csproj">
+      <Project>{29859766-dc79-4c12-95e8-5a568b94f8ca}</Project>
+      <Name>FizzBuzzGenerator</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

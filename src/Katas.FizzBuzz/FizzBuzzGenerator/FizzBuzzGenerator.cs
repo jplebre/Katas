@@ -1,12 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace FizzBuzzGenerator
+namespace FizzBuzzTests
 {
     public class FizzBuzzGenerator
     {
+        public int GetNumberAtPosition(int position)
+        {
+            return position;
+        }
     }
 }
