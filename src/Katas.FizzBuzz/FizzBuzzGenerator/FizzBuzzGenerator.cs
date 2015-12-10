@@ -4,9 +4,10 @@ namespace FizzBuzzTests
 {
     public class FizzBuzzGenerator
     {
-        public int GetNumberAtPosition(int position)
+        public string GetNumberAtPosition(int position)
         {
-            return position;
+            if (position == 3) return "Fizz";
+            return position.ToString();
         }
     }
 }
