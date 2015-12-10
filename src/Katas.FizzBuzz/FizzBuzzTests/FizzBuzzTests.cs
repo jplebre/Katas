@@ -8,9 +8,15 @@ namespace FizzBuzzTests.cs
     public class FizzBuzzTests
     {
         [Test]
-        public void FirstNumberIs()
+        public void FirstNumberIs1()
         {
             Assert.That(new FizzBuzzGenerator().GetNumberAtPosition(0), Is.EqualTo(1));
+        }
+
+        [Test]
+        public void SecondNumberIs2()
+        {
+            Assert.That(new FizzBuzzGenerator().GetNumberAtPosition(1), Is.EqualTo(2));
         }
     }
 
@@ -18,7 +24,7 @@ namespace FizzBuzzTests.cs
     {
         public int GetNumberAtPosition(int position)
         {
-            return 1;
+            return position + 1;
         }
     }
 }
