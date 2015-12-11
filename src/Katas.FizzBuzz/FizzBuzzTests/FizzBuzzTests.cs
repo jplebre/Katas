@@ -43,6 +43,13 @@ namespace FizzBuzzTests
             Assert.That(GetFizzBuzzResultAtPosition(10), Is.EqualTo("Buzz"));
         }
 
+        [Test]
+        public void FifteenthNumberIsFizzBuzz()
+        {
+            Assert.That(GetFizzBuzzResultAtPosition(15), Is.EqualTo("FizzBuzz"));
+
+        }
+
         //----- Helper Methods -----
         private static string GetFizzBuzzResultAtPosition(int position)
         {
