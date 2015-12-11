@@ -64,14 +64,21 @@ namespace FizzBuzzTests
         }
 
         [Test]
-        public void GenerateASequenceFollowsFizzBuzzRules()
+        public void GenerateASequenceFollowsMultipleOf3Rule()
         {
             Assert.That(GetFizzBuzzWithLength(100).GetValue(3), Is.EqualTo("Fizz"));
         }
 
-        private string[] GetFizzBuzzWithLength(int length)
+        [Test]
+        public void GenerateASequenceFollowsMultipleOf5Rule()
         {
-            return new FizzBuzzGenerator().GetFizzBuzzSequenceWithLength(length);
+            Assert.That(GetFizzBuzzWithLength(100).GetValue(5), Is.EqualTo("Buzz"));
+        }
+
+        [Test]
+        public void GenerateASequenceFollowsMultipleOf3and5Rule()
+        {
+            Assert.That(GetFizzBuzzWithLength(100).GetValue(15), Is.EqualTo("FizzBuzz"));
         }
 
         //----- Helper Methods -----
@@ -80,5 +87,9 @@ namespace FizzBuzzTests
             return new FizzBuzzGenerator().GetNumberAtPosition(position);
         }
 
+        private string[] GetFizzBuzzWithLength(int length)
+        {
+            return new FizzBuzzGenerator().GetFizzBuzzSequenceWithLength(length);
+        }
     }
 }
