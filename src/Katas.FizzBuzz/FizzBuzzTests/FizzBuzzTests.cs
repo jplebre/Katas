@@ -63,9 +63,15 @@ namespace FizzBuzzTests
             Assert.That(GetFizzBuzzWithLength(100), Has.Length.EqualTo(100));    
         }
 
+        [Test]
+        public void GenerateASequenceFollowsFizzBuzzRules()
+        {
+            Assert.That(GetFizzBuzzWithLength(100).GetValue(3), Is.EqualTo("Fizz"));
+        }
+
         private string[] GetFizzBuzzWithLength(int length)
         {
-            return new FizzBuzzGenerator().GetFizzBuzzSequenceWithLength(100);
+            return new FizzBuzzGenerator().GetFizzBuzzSequenceWithLength(length);
         }
 
         //----- Helper Methods -----

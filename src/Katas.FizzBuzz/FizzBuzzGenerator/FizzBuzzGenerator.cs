@@ -6,7 +6,12 @@ namespace FizzBuzzTests
     {
         public string[] GetFizzBuzzSequenceWithLength(int length)
         {
-            return new string[length];
+            string[] sequence = new string[length];
+            for (int i = 0; i < sequence.Length; i++)
+            {
+                sequence[i] = GetNumberAtPosition(i);
+            }
+            return sequence;
         }
 
         public string GetNumberAtPosition(int position)
