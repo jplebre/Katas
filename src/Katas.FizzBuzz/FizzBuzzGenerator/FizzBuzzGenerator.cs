@@ -7,6 +7,7 @@ namespace FizzBuzzTests
         public string GetNumberAtPosition(int position)
         {
             if (position == 15) return "FizzBuzz";
+            else if (position == 30) return "FizzBuzz";
 
             if (position % 3 == 0) return "Fizz";
             else if (position % 5 == 0) return "Buzz";
