@@ -31,6 +31,12 @@ namespace FizzBuzzTests
             Assert.That(GetFizzBuzzResultAtPosition(5), Is.EqualTo("Buzz"));
         }
 
+        [Test]
+        public void NinthNumberIsFizz()
+        {
+            Assert.That(GetFizzBuzzResultAtPosition(9), Is.EqualTo("Fizz"));
+        }
+
 
         //----- Helper Methods -----
         private static string GetFizzBuzzResultAtPosition(int position)
