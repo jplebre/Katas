@@ -65,7 +65,7 @@ namespace FizzBuzzTests
 
         private string[] GetFizzBuzzWithLength(int length)
         {
-            return new string[length];
+            return new FizzBuzzGenerator().GetFizzBuzzSequenceWithLength(100);
         }
 
         //----- Helper Methods -----
