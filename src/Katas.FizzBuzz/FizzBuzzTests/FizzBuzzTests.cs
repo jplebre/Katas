@@ -57,6 +57,17 @@ namespace FizzBuzzTests
 
         }
 
+        [Test]
+        public void GenerateASequenceWith100Numbers()
+        {
+            Assert.That(GetFizzBuzzWithLength(100), Has.Length.EqualTo(100));    
+        }
+
+        private string[] GetFizzBuzzWithLength(int length)
+        {
+            return new string[length];
+        }
+
         //----- Helper Methods -----
         private static string GetFizzBuzzResultAtPosition(int position)
         {
