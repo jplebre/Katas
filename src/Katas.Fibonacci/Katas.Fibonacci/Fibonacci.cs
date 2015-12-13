@@ -10,7 +10,7 @@ namespace Katas.Fibonacci
     {
         public int FibonacciNumberAtPosition(int position)
         {
-            return -1;
+            return 0;
         }
     }
 }
