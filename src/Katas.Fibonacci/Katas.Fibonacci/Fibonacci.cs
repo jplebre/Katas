@@ -10,6 +10,8 @@ namespace Katas.Fibonacci
     {
         public int FibonacciNumberAtPosition(int position)
         {
+            if (position > 2)
+                return 1; 
             return position - 1;
         }
     }
