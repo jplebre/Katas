@@ -33,7 +33,7 @@ namespace Katas.Fibonacci.UnitTests
         [Test]
         public void FibonacciGeneratorReturnsSequenceOfLength()
         {
-            Assert.That(new Fibonacci().GenerateFibonacciSequenceWithLength(40), Has.Length.EqualTo(40));
+            Assert.That(new Fibonacci().GenerateFibonacciSequenceWithLength(20), Has.Length.EqualTo(20));
         }
 
         [Test]
