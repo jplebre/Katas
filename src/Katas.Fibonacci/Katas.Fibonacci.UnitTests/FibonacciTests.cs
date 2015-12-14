@@ -9,25 +9,31 @@ namespace Katas.Fibonacci.UnitTests
         [Test]
         public void FibonacciNumberAtPositionOneIsZero()
         {
-            Assert.That(new Fibonacci().FibonacciNumberAtPosition(1), Is.EqualTo(0));
+            Assert.That(GetFibonacciNumberAtPosition(1), Is.EqualTo(0));
         }
 
         [Test]
         public void FibonacciNumberAtPositionTwoIsOne()
         {
-            Assert.That(new Fibonacci().FibonacciNumberAtPosition(2), Is.EqualTo(1));
+            Assert.That(GetFibonacciNumberAtPosition(2), Is.EqualTo(1));
         }
 
         [Test]
         public void FibonacciNumberAtPositionThreeIsOne()
         {
-            Assert.That(new Fibonacci().FibonacciNumberAtPosition(3), Is.EqualTo(1));
+            Assert.That(GetFibonacciNumberAtPosition(3), Is.EqualTo(1));
         }
 
         [Test]
         public void FibonacciNumberAtPositionFourIsTwo()
         {
-            Assert.That(new Fibonacci().FibonacciNumberAtPosition(4), Is.EqualTo(2));
+            Assert.That(GetFibonacciNumberAtPosition(4), Is.EqualTo(2));
+        }
+
+        //Helper Methods
+        private int GetFibonacciNumberAtPosition(int position)
+        {
+            return new Fibonacci().FibonacciNumberAtPosition(position);
         }
     }
 }
