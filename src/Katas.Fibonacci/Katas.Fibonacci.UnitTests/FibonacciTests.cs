@@ -23,5 +23,11 @@ namespace Katas.Fibonacci.UnitTests
         {
             Assert.That(new Fibonacci().FibonacciNumberAtPosition(3), Is.EqualTo(1));
         }
+
+        [Test]
+        public void FibonacciNumberAtPositionFourIsTwo()
+        {
+            Assert.That(new Fibonacci().FibonacciNumberAtPosition(4), Is.EqualTo(2));
+        }
     }
 }

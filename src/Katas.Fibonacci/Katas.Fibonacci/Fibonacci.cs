@@ -11,7 +11,7 @@ namespace Katas.Fibonacci
         public int FibonacciNumberAtPosition(int position)
         {
             if (position > 2)
-                return 1; 
+                return FibonacciNumberAtPosition(position-2) + FibonacciNumberAtPosition(position - 1); 
             return position - 1;
         }
     }
