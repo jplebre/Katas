@@ -14,5 +14,15 @@ namespace Katas.Fibonacci
                 return FibonacciNumberAtPosition(position-2) + FibonacciNumberAtPosition(position - 1); 
             return position - 1;
         }
+
+        public int[] GenerateFibonacciSequenceWithLength(int length)
+        {
+            int[] sequence = new int[length];
+            for (int i = 0; i < sequence.Length; i++)
+            {
+                sequence[i] = FibonacciNumberAtPosition(i + 1);
+            }
+            return sequence;
+        }
     }
 }

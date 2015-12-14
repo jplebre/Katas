@@ -30,6 +30,19 @@ namespace Katas.Fibonacci.UnitTests
             Assert.That(GetFibonacciNumberAtPosition(4), Is.EqualTo(2));
         }
 
+        [Test]
+        public void FibonacciGeneratorReturnsSequenceOfLength()
+        {
+            Assert.That(new Fibonacci().GenerateFibonacciSequenceWithLength(40), Has.Length.EqualTo(40));
+        }
+
+        [Test]
+        public void FibonacciGeneratorFirstFourNumbersAreCorrect()
+        {
+            Assert.That(new Fibonacci().GenerateFibonacciSequenceWithLength(4), Is.EqualTo(new int[] {0,1,1,2}));
+        }
+
+
         //Helper Methods
         private int GetFibonacciNumberAtPosition(int position)
         {
