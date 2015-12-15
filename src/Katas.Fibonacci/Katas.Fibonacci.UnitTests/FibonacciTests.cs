@@ -46,8 +46,7 @@ namespace Katas.Fibonacci.UnitTests
         //Helper Methods
         private int GetFibonacciNumberAtPosition(int position)
         {
-            int[] sequence = new int[position];
-            return new Fibonacci().FibonacciNumberAtPosition(position, sequence);
+            return new Fibonacci().FibonacciNumberAtPosition(position);
         }
     }
 }
