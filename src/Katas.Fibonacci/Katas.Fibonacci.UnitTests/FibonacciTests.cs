@@ -33,20 +33,21 @@ namespace Katas.Fibonacci.UnitTests
         [Test]
         public void FibonacciGeneratorReturnsSequenceOfLength()
         {
-            Assert.That(new Fibonacci().GenerateFibonacciSequenceWithLength(20), Has.Length.EqualTo(20));
+            Assert.That(new Fibonacci().GenerateFibonacciSequenceWithLength(100), Has.Length.EqualTo(100));
         }
 
         [Test]
         public void FibonacciGeneratorFirstFourNumbersAreCorrect()
         {
-            Assert.That(new Fibonacci().GenerateFibonacciSequenceWithLength(4), Is.EqualTo(new int[] {0,1,1,2}));
+            Assert.That(new Fibonacci().GenerateFibonacciSequenceWithLength(4), Is.EqualTo(new int[] { 0, 1, 1, 2 }));
         }
 
 
         //Helper Methods
         private int GetFibonacciNumberAtPosition(int position)
         {
-            return new Fibonacci().FibonacciNumberAtPosition(position);
+            int[] sequence = new int[position];
+            return new Fibonacci().FibonacciNumberAtPosition(position, sequence);
         }
     }
 }

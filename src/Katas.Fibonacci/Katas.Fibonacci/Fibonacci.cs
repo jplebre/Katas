@@ -8,20 +8,24 @@ namespace Katas.Fibonacci
 {
     public class Fibonacci
     {
-        public int FibonacciNumberAtPosition(int position)
+        public int FibonacciNumberAtPosition(int position, int[] sequence)
         {
-            if (position > 2)
-                return FibonacciNumberAtPosition(position-2) + FibonacciNumberAtPosition(position - 1); 
-            return position - 1;
+            for (int i = 0; i < sequence.Length; i++)
+            {
+                if (i == 0) sequence[i] = 0;
+                else if (i == 1) sequence[i] = 1;
+                else
+                {
+                    sequence[i] = sequence[i - 1] + sequence[i - 2];
+                }
+            }
+            return sequence[position - 1];
         }
 
         public int[] GenerateFibonacciSequenceWithLength(int length)
         {
             int[] sequence = new int[length];
-            for (int i = 0; i < sequence.Length; i++)
-            {
-                sequence[i] = FibonacciNumberAtPosition(i + 1);
-            }
+            FibonacciNumberAtPosition(length, sequence);
             return sequence;
         }
     }
