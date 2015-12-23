@@ -24,3 +24,14 @@ This technique is also helpful if you have a legacy code that you wish to start 
 - RhinoMocks
 - NUnit
 - Specflow
+
+
+## Notes on the Fibonacci Kata
+While working on this kata I found out that WHERE you start your TDD journey matters a lot. It becomes a lot harder to later on change your program (and your tests) to improve performance. 
+On the specific example of the Fibonacci sequence as a kata, where you start TDDing might mean that you have a good performing generator, or a design that relies on recursion (which makes it unuseable for longer Fibonacci sequences).
+
+Why does this matter? Because at this point I found it really hard to refactor without changing the methods' signatures. It is possible (as you can see if you follow the commit's order) but doesn't make much "sense"
+
+Bottom line here is:
+- Don't be afraid to change tests. User helper methods if you prefer, making it easier to change several tests relying on the same method call
+- Do think about how and were you start approaching a test driven development design approach
